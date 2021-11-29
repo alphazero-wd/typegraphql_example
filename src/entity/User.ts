@@ -1,5 +1,5 @@
-import { Field, ID, ObjectType, Root } from 'type-graphql';
-import { BaseEntity, Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
+import { Field, ID, ObjectType, Root } from "type-graphql";
+import { BaseEntity, Column, Entity, PrimaryGeneratedColumn } from "typeorm";
 
 @ObjectType()
 @Entity()
@@ -25,7 +25,7 @@ export class User extends BaseEntity {
     return `${firstName} ${lastName}`;
   }
   @Field()
-  @Column('text', { nullable: true })
+  @Column("text", { nullable: true })
   imageUrl?: string;
 
   @Column()
