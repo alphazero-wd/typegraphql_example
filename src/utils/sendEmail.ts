@@ -6,7 +6,7 @@ export const sendEmail = async (to: string, html: string) => {
       service: 'gmail',
       auth: {
         user: 'alphazero25811@gmail.com',
-        pass: 'cjnztrguylflsfby',
+        pass: process.env.NODEMAILER_PASSWORD,
       },
     });
 
