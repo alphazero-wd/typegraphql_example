@@ -6,11 +6,13 @@ import { useMeQuery } from '../generated/graphql';
 const Home: NextPage = () => {
   const router = useRouter();
   const { data } = useMeQuery();
+
   useEffect(() => {
-    if (!data) {
+    if (!data?.me) {
       router.push('/user/login');
     }
   }, [data]);
+
   return (
     <div>
       <h3 className="text-center mb-3">Hello {data?.me?.fullName}</h3>
