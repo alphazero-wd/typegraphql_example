@@ -1,0 +1,14 @@
+mutation Signup($userInfo: RegisterInput!) {
+  signup(userInfo: $userInfo) {
+    user {
+      email
+      fullName
+      isConfirmed
+    }
+    token
+    errors {
+      field
+      message
+    }
+  }
+}

@@ -1,15 +1,15 @@
-import type { AppProps } from 'next/app';
-import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
-
-const client = new ApolloClient({
-  uri: 'https://48p1r2roz4.sse.codesandbox.io',
-  cache: new InMemoryCache(),
-});
+import "bootstrap/dist/css/bootstrap.min.css";
+import type { AppProps } from "next/app";
+import { ApolloProvider } from "@apollo/client";
+import Layout from "../components/Layout";
+import { client } from "./client";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <ApolloProvider client={client}>
-      <Component {...pageProps} />
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
     </ApolloProvider>
   );
 }
